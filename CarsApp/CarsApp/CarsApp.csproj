@@ -6,4 +6,37 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Views\Cars\" />
+    <None Remove="Dto\" />
+    <None Remove="Domain\" />
+    <None Remove="ServiceInterface\" />
+    <None Remove="Data\" />
+    <None Remove="Services\" />
+    <None Remove="Models\Cars\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Cars\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Domain\" />
+    <Folder Include="ServiceInterface\" />
+    <Folder Include="Data\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\Cars\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.25">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.25">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.25" />
+  </ItemGroup>
 </Project>
