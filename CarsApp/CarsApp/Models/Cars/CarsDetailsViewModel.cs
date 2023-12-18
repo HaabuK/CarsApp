@@ -1,8 +1,7 @@
 ﻿using System;
-
-namespace CarsApp.Domain
+namespace CarsApp.Models.Cars
 {
-	public class Car
+	public class CarsDetailsViewModel
 	{
         public Guid? Id { get; set; }
         public string Make { get; set; }
