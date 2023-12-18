@@ -80,26 +80,6 @@ namespace CarsApp.Services
 
             return carId;
         }
-
-        Task<Car> ICarsServices.Create(CarDto dto)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<Car> ICarsServices.DetailsAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<Car> ICarsServices.Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<Car> ICarsServices.Update(CarDto dto)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 
