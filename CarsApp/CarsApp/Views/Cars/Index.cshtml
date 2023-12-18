@@ -19,18 +19,23 @@
                     <th></th>
                     <th scope="col">Make</th>
                     <th scope="col">Model</th>
-                    @*<th>Logo</th>*@
+                    <th>Logo</th>
                     <th>Navigation</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var cars in Model)
-                {
+                    {
                     <tr>
                         <td>@rowNumber</td>
                         <td>@cars.Make</td>
                         <td>@cars.Model</td>
-                        @*<td>@cars.Logo</td>*@
+                        <td>
+                            @if (System.IO.File.Exists($"wwwroot/Logos/{cars.Make}.png"))
+                            {
+                                <img src="/Logos/@(cars.Make).png" alt="Image" width="60"/>
+                            }
+                        </td>
                         <td>
                             <a asp-action="details" asp-controller="cars" asp-route-id="@cars.Id" class="btn btn-info">Details</a>
                             <a asp-action="update" asp-controller="cars" asp-route-id="@cars.Id" class="btn btn-primary">Update</a>
