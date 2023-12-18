@@ -2,8 +2,10 @@
 using CarsApp.Data;
 using CarsApp.Domain;
 using CarsApp.Dto;
+using CarsApp.Models.Cars;
 using CarsApp.ServiceInterface;
 using Microsoft.EntityFrameworkCore;
+using static CarsApp.Domain.Car;
 
 namespace CarsApp.Services
 {
@@ -22,15 +24,17 @@ namespace CarsApp.Services
 
         public async Task<Car> Create(CarDto dto)
         {
-            Car car = new Car();
+            Car car = new Car
+            {
+                Id = Guid.NewGuid(),
+                Make = dto.Make,
+                Model = dto.Model,
+                Year = dto.Year,
+                Color = dto.Color,
+                Power = dto.Power,
+                Fuel = dto.Fuel,
+            };
 
-            car.Id = Guid.NewGuid();
-            car.Make = dto.Make;
-            car.Model = dto.Model;
-            car.Year = dto.Year;
-            car.Color = dto.Color;
-            car.Power = dto.Power;
-            car.Fuel = dto.Fuel;
             car.CreatedAt = DateTime.Now;
             car.UpdatedAt = DateTime.Now;
 
@@ -60,6 +64,7 @@ namespace CarsApp.Services
             car.Color = dto.Color;
             car.Power = dto.Power;
             car.Fuel = dto.Fuel;
+
             car.CreatedAt = DateTime.Now;
             car.UpdatedAt = DateTime.Now;
 

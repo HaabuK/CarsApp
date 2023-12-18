@@ -11,6 +11,7 @@ namespace CarsApp.Models.Cars
         public int Power { get; set; }
         public string Fuel { get; set; }
 
+
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }

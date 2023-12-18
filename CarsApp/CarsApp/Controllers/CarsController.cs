@@ -147,6 +147,7 @@ namespace CarsApp.Controllers
             vm.Color = car.Color;
             vm.Power = car.Power;
             vm.Fuel = car.Fuel;
+
             vm.CreatedAt = car.CreatedAt;
             vm.UpdatedAt = car.UpdatedAt;
 
