@@ -1,9 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<body>
+    <div class="scroll-container" id="content">
+        <img src="/Gallery/Ferrari.jpg" alt="Ferrari GTO">
+        <img src="/Gallery/Rimac.jpg" alt="Rimac Nevera">
+        <img src="/Gallery/Bugatti.jpg" alt="Bugatti Divo">
+        <img src="/Gallery/Beetle.jpg" alt="VW Beetle">
+        <img src="/Gallery/Miura.jpg" alt="Lamborgini Miura">
+        <img src="/Gallery/Audi.jpg" alt="Audi Concept">
+        <img src="/Gallery/Dom.jpg" alt="Doms Charger">
+    </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <script>const content = document.getElementById('content');
 
+        // Prevent the default behavior of the wheel event
+        content.addEventListener('wheel', (event) => {
+            content.scrollLeft += event.deltaY;
+            event.preventDefault();
+        });</script>
+</body>

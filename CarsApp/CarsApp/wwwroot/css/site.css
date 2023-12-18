@@ -158,3 +158,34 @@ tr:hover td {
         background-color: rgba(0, 0, 0, .2);
         color: #A5E166;
     }
+
+div.scroll-container {
+    background-color: rgba(0, 0, 0, .7);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px;
+    height: 800px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    perspective: 1000px;
+    position: absolute;
+    left: 0px;
+    padding-left: 600px;
+    padding-right: 600px;
+}
+
+    div.scroll-container img {
+        padding: 10px;
+        transition: transform 0.3s; /* Add a smooth transition effect */
+        height: 500px;
+    }
+
+        div.scroll-container img:hover {
+            transform: scale(1.5);
+        }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
