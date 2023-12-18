@@ -4,8 +4,8 @@
         int rowNumber = 1;
     }
 
-    <div>
-        <a asp-action="create" asp-controller="cars" type="submit" class="btn btn-primary">New Car</a>
+    <div style="text-align: left">
+        <a asp-action="create" asp-controller="cars" type="submit" class="btn btn-primary">Add a new car to the list</a>
     </div>
 
 
@@ -16,9 +16,11 @@
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <th></th>
                     <th scope="col">Make</th>
                     <th scope="col">Model</th>
-                    <th></th>
+                    @*<th>Logo</th>*@
+                    <th>Navigation</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +30,7 @@
                         <td>@rowNumber</td>
                         <td>@cars.Make</td>
                         <td>@cars.Model</td>
+                        @*<td>@cars.Logo</td>*@
                         <td>
                             <a asp-action="details" asp-controller="cars" asp-route-id="@cars.Id" class="btn btn-info">Details</a>
                             <a asp-action="update" asp-controller="cars" asp-route-id="@cars.Id" class="btn btn-primary">Update</a>
