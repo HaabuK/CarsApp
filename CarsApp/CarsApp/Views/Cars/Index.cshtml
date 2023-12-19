@@ -33,7 +33,7 @@
                         <td>
                             @if (System.IO.File.Exists($"wwwroot/Logos/{cars.Make}.png"))
                             {
-                                <img src="/Logos/@(cars.Make).png" alt="Image" width="60"/>
+                                <img style="background-color:rgba(211,255,254,.3); padding:10px; border-radius:10px; width:60px;" src="/Logos/@(cars.Make).png" alt="Image"/>
                             }
                         </td>
                         <td>

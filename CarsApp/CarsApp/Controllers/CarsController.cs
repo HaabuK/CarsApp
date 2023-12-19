@@ -61,9 +61,16 @@ namespace CarsApp.Controllers
                 Year = vm.Year,
                 Color = vm.Color,
                 Power = vm.Power,
-                Fuel = vm.Fuel,
                 CreatedAt = vm.CreatedAt,
                 UpdatedAt = vm.UpdatedAt,
+            };
+            if (vm.Fuel == "Other")
+            {
+                dto.Fuel = vm.OtherFuel;
+            }
+            else
+            {
+                dto.Fuel = vm.Fuel;
             };
 
             var result = await _carsServices.Create(dto);
@@ -95,6 +102,17 @@ namespace CarsApp.Controllers
             vm.Color = car.Color;
             vm.Power = car.Power;
             vm.Fuel = car.Fuel;
+
+            if (!vm.AvailableFuelTypes.Contains(car.Fuel))
+            {
+                vm.Fuel = "Other";
+                vm.OtherFuel = car.Fuel;
+            }
+            else
+            {
+                vm.Fuel = car.Fuel;
+            }
+
             vm.CreatedAt = car.CreatedAt;
             vm.UpdatedAt = car.UpdatedAt;
 
@@ -113,9 +131,16 @@ namespace CarsApp.Controllers
                 Year = vm.Year,
                 Color = vm.Color,
                 Power = vm.Power,
-                Fuel = vm.Fuel,
                 CreatedAt = vm.CreatedAt,
                 UpdatedAt = vm.UpdatedAt,
+            };
+            if (vm.Fuel == "Other")
+            {
+                dto.Fuel = vm.OtherFuel;
+            }
+            else
+            {
+                dto.Fuel = vm.Fuel;
             };
 
             var result = await _carsServices.Update(dto);

@@ -1,4 +1,7 @@
 ﻿@model CarsApp.Models.Cars.CarsCreateUpdateViewModel
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <div class="taust">
         @if (Model.Id.HasValue)
         {
@@ -51,30 +54,56 @@
                 </div>
 
                 @*<div class="form-group row">
-                    <label asp-for="Fuel" class="col-sm-2 col-form-label"></label>
-                    <div class="col-sm-10">
-                        <input asp-for="Fuel" class="form-control" />
-                    </div>
-                </div>*@
+                        <label asp-for="Fuel" class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="Fuel" class="form-control" />
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group row">
+                        <label asp-for="Fuel" class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                            <select asp-for="Fuel" class="form-control">
+                                <option value="">Select Fuel Type</option>
+                                @foreach (var fuelType in Model.AvailableFuelTypes)
+                                {
+                                    <option value="@fuelType">@fuelType</option>
+                                }
+                            </select>
+                        </div>
+                    </div>*@
 
                 <div class="form-group row">
                     <label asp-for="Fuel" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
-                        <select asp-for="Fuel" class="form-control">
+                        <select id="fuelSelect" asp-for="Fuel" class="form-control">
                             <option value="">Select Fuel Type</option>
                             @foreach (var fuelType in Model.AvailableFuelTypes)
                             {
                                 <option value="@fuelType">@fuelType</option>
                             }
+                            <option value="Other">Other</option>
                         </select>
+                        <input asp-for="OtherFuel" type="text" id="otherFuel" name="OtherFuel" class="form-control" style="display:none;" placeholder="Enter Other Fuel Type">
                     </div>
                 </div>
 
+                <script>$(document).ready(function () {
+                        function toggleOtherFuel() {
+                            if ($("#fuelSelect").val() == "Other") {
+                                $("#otherFuel").show();
+                            } else {
+                                $("#otherFuel").hide();
+                            }
+                        }
 
+                        toggleOtherFuel();
 
+                        $("#fuelSelect").change(function () {
+                            toggleOtherFuel();
+                        });
+                    });</script>
 
-
-                <hr />
                 <hr />
 
                 @if (Model.Id.HasValue)
@@ -90,4 +119,4 @@
 
             </form>
         </div>
-       </div>
+    </div>

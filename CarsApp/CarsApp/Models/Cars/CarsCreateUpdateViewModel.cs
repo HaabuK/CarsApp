@@ -10,8 +10,10 @@ namespace CarsApp.Models.Cars
         public string Color { get; set; }
         public int Power { get; set; }
         public string Fuel { get; set; }
+        public string OtherFuel { get; set; }
 
-        public List<string> AvailableFuelTypes { get; set; } = new List<string> { "Gasoline", "Diesel", "Electric", "Hybrid", "Other" };
+        public List<string> AvailableFuelTypes { get; set; } = new List<string> { "Gasoline", "Diesel", "Electric",
+            "Hybrid", "Hydrogen", "CNG/LNG"};
 
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
