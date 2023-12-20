@@ -4,14 +4,24 @@
         int rowNumber = 1;
     }
 
-    <div style="text-align: left">
-        <a asp-action="create" asp-controller="cars" type="submit" class="btn btn-primary">Add a new car to the list</a>
-    </div>
-
-
     <div class="h1">
         Cars
     </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" id="searchInput" oninput="filterTable()" class="form-control" placeholder="Filter" style="width:70%" />
+        </div>
+
+        <div class="col-md-6" style="text-align: right">
+            <a asp-action="create" asp-controller="cars" type="submit" class="btn btn-primary">Add a new car to the list</a>
+        </div>
+    </div>
+
+    <br/>
+
     <form method="post">
         <table class="table table-hover">
             <thead>
@@ -23,9 +33,9 @@
                     <th>Navigation</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="carTableBody">
                 @foreach (var cars in Model)
-                    {
+                {
                     <tr>
                         <td>@rowNumber</td>
                         <td>@cars.Make</td>
@@ -33,7 +43,7 @@
                         <td>
                             @if (System.IO.File.Exists($"wwwroot/Logos/{cars.Make}.png"))
                             {
-                                <img style="background-color:rgba(211,255,254,.3); padding:10px; border-radius:10px; width:60px;" src="/Logos/@(cars.Make).png" alt="Image"/>
+                                <img style="background-color:rgba(211,255,254,.3); padding:10px; border-radius:10px; width:60px;" src="/Logos/@(cars.Make).png" alt="Image" />
                             }
                         </td>
                         <td>
@@ -48,4 +58,31 @@
             </tbody>
         </table>
     </form>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("carTableBody");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td1 = tr[i].getElementsByTagName("td")[1]; // Index of the first column to filter
+                td2 = tr[i].getElementsByTagName("td")[2]; // Index of the second column to filter
+
+                if (td1 || td2) {
+                    txtValue1 = td1 ? td1.textContent || td1.innerText : "";
+                    txtValue2 = td2 ? td2.textContent || td2.innerText : "";
+                    var combinedTxtValue = txtValue1 + txtValue2;
+
+                    if (combinedTxtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </div>
