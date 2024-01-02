@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 <body>
+    @*Static pictures from folder wwwroot/Gallery*@
     <div class="scroll-container" id="content">
         <img src="/Gallery/Ferrari.jpg" alt="Ferrari GTO">
         <img src="/Gallery/Rimac.jpg" alt="Rimac Nevera">
@@ -14,9 +15,10 @@
 
     <script>const content = document.getElementById('content');
 
-        // Prevent the default behavior of the wheel event
+        // Prevent the default behavior of the wheel event so that pictures scroll sideways
         content.addEventListener('wheel', (event) => {
             content.scrollLeft += event.deltaY;
             event.preventDefault();
-        });</script>
+        });
+    </script>
 </body>

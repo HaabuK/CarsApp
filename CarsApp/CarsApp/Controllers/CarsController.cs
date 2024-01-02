@@ -106,7 +106,7 @@ namespace CarsApp.Controllers
             if (!vm.AvailableFuelTypes.Contains(car.Fuel))
             {
                 vm.Fuel = "Other";
-                vm.OtherFuel = car.Fuel;
+                vm.OtherFuel = car.Fuel; //Uses input string when chosen "Other" in fuel slot
             }
             else
             {
