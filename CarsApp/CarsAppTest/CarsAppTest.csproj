@@ -19,6 +19,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.25" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,5 +29,8 @@
   <ItemGroup>
     <Folder Include="Macros\" />
     <Folder Include="Mock\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarsApp\CarsApp.csproj" />
   </ItemGroup>
 </Project>
