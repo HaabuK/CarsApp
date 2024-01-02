@@ -21,4 +21,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Macros\" />
+    <None Remove="Mock\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Macros\" />
+    <Folder Include="Mock\" />
+  </ItemGroup>
 </Project>
