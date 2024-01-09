@@ -1,11 +1,9 @@
 ﻿using System;
 using CarsApp.Data;
+using Microsoft.EntityFrameworkCore;
+using CarsApp.ServiceInterface;
 using CarsApp.Domain;
 using CarsApp.Dto;
-using CarsApp.Models.Cars;
-using CarsApp.ServiceInterface;
-using Microsoft.EntityFrameworkCore;
-using static CarsApp.Domain.Car;
 
 namespace CarsApp.Services
 {

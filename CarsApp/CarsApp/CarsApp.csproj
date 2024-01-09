@@ -8,20 +8,10 @@
 
   <ItemGroup>
     <None Remove="Views\Cars\" />
-    <None Remove="Dto\" />
-    <None Remove="Domain\" />
-    <None Remove="ServiceInterface\" />
-    <None Remove="Data\" />
-    <None Remove="Services\" />
     <None Remove="Models\Cars\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cars\" />
-    <Folder Include="Dto\" />
-    <Folder Include="Domain\" />
-    <Folder Include="ServiceInterface\" />
-    <Folder Include="Data\" />
-    <Folder Include="Services\" />
     <Folder Include="Models\Cars\" />
     <Folder Include="wwwroot\Logos\" />
   </ItemGroup>
@@ -46,5 +36,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Logos\Ford.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarsApp.ApplicationServices\CarsApp.ApplicationServices.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\CarsApp.Data\CarsApp.Data.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\CarsApp.Core\CarsApp.Core.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
